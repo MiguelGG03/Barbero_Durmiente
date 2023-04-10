@@ -12,7 +12,7 @@ class Cola:
         """ Creacion de una cola vacia """
         self.items = []
     
-    def encolar(self, item:Cliente):
+    def encolar(self, item):
         """ Metodo que agrega un cliente a la cola como último elemento """
         self.items.append(item)
 
@@ -37,32 +37,26 @@ class Cola:
     def imprimir(self):
         """ Metodo que imprime la cola """
         try:
-            self.items[0]
-            self.items[1]
-            self.items[2]
-            self.items[3]
+            self.items[3].getNumCliente()
 
-            print(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} , Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} , Cliente {self.items[2].getNumCliente()} - {self.items[2].getEstado()} - Cliente {self.items[3].getNumCliente()} - {self.items[3].getEstado()} ]")
+            return (f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} , Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} , Cliente {self.items[2].getNumCliente()} - {self.items[2].getEstado()} - Cliente {self.items[3].getNumCliente()} - {self.items[3].getEstado()} ]")
         except IndexError:
             try:
-                self.items[0]
-                self.items[1]
-                self.items[2]
+                self.items[2].getNumCliente()
 
-                print(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} , Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} , Cliente {self.items[2].getNumCliente()} - {self.items[2].getEstado()} , Silla 3 - Vacio ]")
+                return (f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} , Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} , Cliente {self.items[2].getNumCliente()} - {self.items[2].getEstado()} , Silla 3 - Vacio ]")
             except IndexError:
                 try:
-                    self.items[0]
-                    self.items[1]
+                    self.items[1].getNumCliente()
 
-                    print(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()}, Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} , Silla 2 - Vacio , Silla 3 - Vacio ]")
+                    return(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()}, Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} , Silla 2 - Vacio , Silla 3 - Vacio ]")
                 except IndexError:
                     try:
-                        self.items[0]
+                        self.items[0].getNumCliente()
 
-                        print(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} , Silla 2 - Vacio , Silla 3 - Vacio ]")
+                        return(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} , Silla 2 - Vacio , Silla 3 - Vacio ]")
                     except IndexError:
-                        print("[ Nadie con Barbero , Silla 1 - Vacio , Silla 2 - Vacio , Silla 3 - Vacio ]")
+                        return("[ Nadie con Barbero , Silla 1 - Vacio , Silla 2 - Vacio , Silla 3 - Vacio ]")
 
     def count(self):
         """ Metodo que devuelve el numero de clientes en la cola """

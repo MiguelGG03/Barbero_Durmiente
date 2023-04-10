@@ -31,8 +31,8 @@ def main():
                     j -= 1
 
             print("| Posiciones totales : [ Barbero , Silla 1 , Silla 2 , Silla 3 ] |\n")
-            print("\n---------------------------------------------------------------\n")
-            print(f"| Posiciones ocupadas : {cola.imprimir()} |")
+            print("---------------------------------------------------------------\n")
+            print(f"| Posiciones ocupadas : {cola.imprimir()} |\n")
 
         if not cola.estaVacia():
             if cola.first().getTiempoDeEspera() == cola.first.getTiempoEsperado():
@@ -49,8 +49,8 @@ def main():
                         item.setEstado(f"Esperando en Silla {k}")
                     k += 1
                 print("| Posiciones totales: [ Barbero , Silla 1 , Silla 2 , Silla 3 ] |\n")
-                print("\n---------------------------------------------------------------\n")
-                print(f"| Posiciones ocupadas: {cola.imprimir()} |")
+                print("---------------------------------------------------------------\n")
+                print(f"| Posiciones ocupadas: {cola.imprimir()} |\n")
             else:
                 cola.first().setTiempoDeEspera(cola.first().getTiempoEsperado() + 1)
         i += 1
