@@ -27,4 +27,7 @@ class Cliente:
     
     def getTiempoDeEspera(self):
         return self.tiempoDeEspera
+    
+    def setTiempoDeEspera(self,x:int):
+        self.tiempoDeEspera=x
         

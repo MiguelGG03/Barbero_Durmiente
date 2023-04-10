@@ -35,11 +35,12 @@ def main():
             print(f"| Posiciones ocupadas : {cola.imprimir()} |\n")
 
         if not cola.estaVacia():
-            if cola.first().getTiempoDeEspera() == cola.first.getTiempoEsperado():
+            cliente_1=cola.first()
+            if cliente_1.getTiempoDeEspera() == cliente_1.getTiempoEsperado():
                 cola.desencolar()
                 print("Salio un cliente de la cola\n")
                 if not cola.estaVacia():
-                    cola.first().setEstado("Con Barbero")
+                    cliente_1.setEstado("Con Barbero")
                     barbero.setOcupado(True)
                 else:
                     barbero.setOcupado(False)
@@ -52,7 +53,7 @@ def main():
                 print("---------------------------------------------------------------\n")
                 print(f"| Posiciones ocupadas: {cola.imprimir()} |\n")
             else:
-                cola.first().setTiempoDeEspera(cola.first().getTiempoEsperado() + 1)
+                cliente_1.setTiempoDeEspera(cliente_1.getTiempoEsperado() + 1)
         i += 1
 
 if __name__ == "__main__":
