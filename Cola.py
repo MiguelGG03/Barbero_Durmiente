@@ -39,7 +39,7 @@ class Cola:
         try:
             self.items[3].getNumCliente()
 
-            return (f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} , Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} , Cliente {self.items[2].getNumCliente()} - {self.items[2].getEstado()} - Cliente {self.items[3].getNumCliente()} - {self.items[3].getEstado()} ]")
+            return (f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} - Tiempo de Espera {self.items[0].getTiempoDeEspera()} - Tiempo Esperado {self.items[0].getTiempoEsperado()} , Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} , Cliente {self.items[2].getNumCliente()} - {self.items[2].getEstado()} - Cliente {self.items[3].getNumCliente()} - {self.items[3].getEstado()} ]")
         except IndexError:
             try:
                 self.items[2].getNumCliente()

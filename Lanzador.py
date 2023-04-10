@@ -19,7 +19,7 @@ def main():
 
         if i % 10 == 0:
             opcion = input("Desea agregar un cliente?\n[S/N]\n>>>  ")
-            hora_desp=time.time()-hora
+            hora_desp=(time.time()-hora)/5
             hora=time.time()
             if opcion == 'S' or opcion == 's':
                 j += 1
@@ -41,7 +41,7 @@ def main():
 
         if not cola.estaVacia():
             cliente_1=cola.first()
-            if cliente_1.getTiempoDeEspera() == cliente_1.getTiempoEsperado():
+            if cliente_1.getTiempoDeEspera() <= cliente_1.getTiempoEsperado():
                 cola.desencolar()
                 print("Salio un cliente de la cola\n")
                 if not cola.estaVacia():
