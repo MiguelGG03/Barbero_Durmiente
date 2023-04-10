@@ -59,6 +59,6 @@ class Cola:
     
     def estaVacia(self):
         """ Metodo que verifica si la cola esta vacia """
-        return len(self.items) == 0
+        return self.items == []
 
     
