@@ -58,7 +58,7 @@ def main():
                 print("---------------------------------------------------------------\n")
                 print(f"| Posiciones ocupadas: {cola.imprimir()} |\n")
             else:
-                cliente_1.setTiempoDeEsperado(cliente_1.getTiempoEsperado() + int(round((hora_desp),0)))
+                cliente_1.setTiempoEsperado(cliente_1.getTiempoEsperado() + int(round((hora_desp),0)))
         i += 1
 
 if __name__ == "__main__":
