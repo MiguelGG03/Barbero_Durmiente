@@ -11,12 +11,8 @@ class Cola:
     def __init__(self):
         """ Creacion de una cola vacia """
         self.items = []
-
-    def estaVacia(self):
-        """ Metodo que verifica si la cola esta vacia """
-        return self.items == []
     
-    def encolar(self, item):
+    def encolar(self, item:Cliente):
         """ Metodo que agrega un cliente a la cola como último elemento """
         self.items.append(item)
 
@@ -44,17 +40,25 @@ class Cola:
             self.items[0]
             self.items[1]
             self.items[2]
-            print(f"[ Barbero , Silla 1 - Cliente {self.items[0]} , Silla 2 - Cliente {self.items[1]} , Silla 3 - Cliente {self.items[2]} ]")
+            print(f"[ Barbero , {self.items[0].estado} - Cliente {self.items[0].numCliente} , {self.items[1].estado} - Cliente {self.items[1].numCliente} , {self.items[2].estado} - Cliente {self.items[2].numCliente} ]")
         except IndexError:
             try:
                 self.items[0]
                 self.items[1]
-                print(f"[ Barbero , Silla 1 - Cliente {self.items[0]} , Silla 2 - Cliente {self.items[1]} , Silla 3 - Vacio ]")
+                print(f"[ Barbero , {self.items[0].estado} - Cliente {self.items[0].numCliente} , {self.items[1].estado} - Cliente {self.items[1].numCliente} , Silla 3 - Vacio ]")
             except IndexError:
                 try:
                     self.items[0]
-                    print(f"[ Barbero , Silla 1 - Cliente {self.items[0]} , Silla 2 - Vacio , Silla 3 - Vacio ]")
+                    print(f"[ Barbero , {self.items[0].estado} - Cliente {self.items[0].numCliente} , Silla 2 - Vacio , Silla 3 - Vacio ]")
                 except IndexError:
                     print("[ Barbero , Silla 1 - Vacio , Silla 2 - Vacio , Silla 3 - Vacio ]")
+
+    def count(self):
+        """ Metodo que devuelve el numero de clientes en la cola """
+        return len(self.items)
+    
+    def estaVacia(self):
+        """ Metodo que verifica si la cola esta vacia """
+        return len(self.items) == 0
 
     
