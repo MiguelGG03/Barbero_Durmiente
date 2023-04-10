@@ -20,7 +20,7 @@ def main():
             opcion = input("Desea agregar un cliente?\n[S/N]\n>>>  ")
             if opcion == 'S' or opcion == 's':
                 j += 1
-                if cola.estaVacia() or not barbero.isOcupado():
+                if cola.estaVacia():
                     cola.encolar(Cliente(j,"Con Barbero"))
                 elif cola.count() == 1:
                     cola.encolar(Cliente(j,"Esperando en Silla 1"))
@@ -55,7 +55,7 @@ def main():
                 print("---------------------------------------------------------------\n")
                 print(f"| Posiciones ocupadas: {cola.imprimir()} |\n")
             else:
-                cliente_1.setTiempoDeEspera(cliente_1.getTiempoEsperado() + 1)
+                cliente_1.setTiempoDeEsperado(cliente_1.getTiempoEsperado() + 1)
         i += 1
 
 if __name__ == "__main__":
