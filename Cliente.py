@@ -21,4 +21,10 @@ class Cliente:
     
     def setEstado(self,x:str):
         self.estado=x
+
+    def getTiempoEsperado(self):
+        return self.tiempoEsperado
+    
+    def getTiempoDeEspera(self):
+        return self.tiempoDeEspera
         
