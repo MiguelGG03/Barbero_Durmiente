@@ -30,9 +30,30 @@ def main():
                     print("No hay sillas disponibles, el cliente se va\n")
                     j -= 1
 
-            print("| Posiciones posibles : [ Barbero , Silla 1 , Silla 2 , Silla 3 ] |\n")
+            print("| Posiciones totales : [ Barbero , Silla 1 , Silla 2 , Silla 3 ] |\n")
             print("\n---------------------------------------------------------------\n")
             print(f"| Posiciones ocupadas : {cola.imprimir()} |")
 
         if not cola.estaVacia():
-            cola.first().getTiempoDeEspera() == cola.first.getTiempoEsperado()
+            if cola.first().getTiempoDeEspera() == cola.first.getTiempoEsperado():
+                cola.desencolar()
+                print("Salio un cliente de la cola\n")
+                if not cola.estaVacia():
+                    cola.first().setEstado("Con Barbero")
+                    barbero.setOcupado(True)
+                else:
+                    barbero.setOcupado(False)
+                k = 0
+                for item in cola.items:
+                    if not k == 0:
+                        item.setEstado(f"Esperando en Silla {k}")
+                    k += 1
+                print("| Posiciones totales: [ Barbero , Silla 1 , Silla 2 , Silla 3 ] |\n")
+                print("\n---------------------------------------------------------------\n")
+                print(f"| Posiciones ocupadas: {cola.imprimir()} |")
+            else:
+                cola.first().setTiempoDeEspera(cola.first().getTiempoEsperado() + 1)
+        i += 1
+
+if __name__ == "__main__":
+    main()
