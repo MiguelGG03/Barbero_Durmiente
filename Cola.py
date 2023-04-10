@@ -55,12 +55,12 @@ class Cola:
                     self.items[0]
                     self.items[1]
 
-                    print(f"[ Cliente {self.items[0].getNumCliente()} - {self.item[0].getEstado()}, Cliente {self.items[1].getNumCliente()} - {self.item[1].getEstado()} , Silla 2 - Vacio , Silla 3 - Vacio ]")
+                    print(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()}, Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} , Silla 2 - Vacio , Silla 3 - Vacio ]")
                 except IndexError:
                     try:
                         self.items[0]
 
-                        print(f"[ Cliente {self.items[0].getNumCliente()} - {self.item[0].getEstado()} , Silla 2 - Vacio , Silla 3 - Vacio ]")
+                        print(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} , Silla 2 - Vacio , Silla 3 - Vacio ]")
                     except IndexError:
                         print("[ Nadie con Barbero , Silla 1 - Vacio , Silla 2 - Vacio , Silla 3 - Vacio ]")
 
