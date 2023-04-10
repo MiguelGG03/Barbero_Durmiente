@@ -20,8 +20,6 @@ def main():
         if i % 10 == 0:
             
             hora_desp=round((time.time()-hora),0)
-            print(hora_desp)
-            
             hora=round(time.time(),0)
 
             opcion = input("Desea agregar un cliente?\n[S/N]\n>>>  ")
@@ -39,11 +37,6 @@ def main():
                 else:
                     print("No hay sillas disponibles, el cliente se va\n")
                     j -= 1
-
-
-            print(f"{str(cola.items[0].getTiempoEsperado())} TIEMPO ESPERADO")
-
-
 
 
             print("| Posiciones totales : [ Barbero , Silla 1 , Silla 2 , Silla 3 ] |\n")
