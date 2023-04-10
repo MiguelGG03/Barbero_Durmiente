@@ -19,10 +19,10 @@ class Cola:
     def first(self):
         """ Metodo que devuelve el primer elemento de la cola """
         try:
-            self.items[0]
+            return self.items[0]
         except IndexError:
-            print("La cola esta vacia")
-
+            return None
+        
     def desencolar(self):
         """ Metodo que elimina el primer elemento de la cola """
         try:
