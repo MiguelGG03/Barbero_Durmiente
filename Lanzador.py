@@ -18,9 +18,14 @@ def main():
 
 
         if i % 10 == 0:
+            
+            hora_desp=round((time.time()-hora),0)
+            print(hora_desp)
+            
+            hora=round(time.time(),0)
+
             opcion = input("Desea agregar un cliente?\n[S/N]\n>>>  ")
-            hora_desp=(time.time()-hora)/5
-            hora=time.time()
+            
             if opcion == 'S' or opcion == 's':
                 j += 1
                 if cola.estaVacia():
@@ -35,6 +40,12 @@ def main():
                     print("No hay sillas disponibles, el cliente se va\n")
                     j -= 1
 
+
+            print(f"{str(cola.items[0].getTiempoEsperado())} TIEMPO ESPERADO")
+
+
+
+
             print("| Posiciones totales : [ Barbero , Silla 1 , Silla 2 , Silla 3 ] |\n")
             print("---------------------------------------------------------------\n")
             print(f"| Posiciones ocupadas : {cola.imprimir()} |\n")
@@ -45,7 +56,7 @@ def main():
                 cola.desencolar()
                 print("Salio un cliente de la cola\n")
                 if not cola.estaVacia():
-                    cliente_1.setEstado("Con Barbero")
+                    cola.first().setEstado("Con Barbero")
                     barbero.setOcupado(True)
                 else:
                     barbero.setOcupado(False)
@@ -58,7 +69,7 @@ def main():
                 print("---------------------------------------------------------------\n")
                 print(f"| Posiciones ocupadas: {cola.imprimir()} |\n")
             else:
-                cliente_1.setTiempoEsperado(cliente_1.getTiempoEsperado() + int(round((hora_desp),0)))
+                cliente_1.setTiempoEsperado(cliente_1.getTiempoEsperado() + hora_desp)
         i += 1
 
 if __name__ == "__main__":
