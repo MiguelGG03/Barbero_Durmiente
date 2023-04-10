@@ -23,12 +23,38 @@ class Cola:
     def first(self):
         """ Metodo que devuelve el primer elemento de la cola """
         try:
-            return self.items[0]
+            self.items[0]
         except IndexError:
             print("La cola esta vacia")
-            return self.items
 
     def desencolar(self):
         """ Metodo que elimina el primer elemento de la cola """
-        return self.items.pop(0)
+        try:
+            self.items.pop(0)
+        except IndexError:
+            print("La cola esta vacia")
+
+    def tamano(self):
+        """ Metodo que devuelve el tamaño de la cola """
+        return len(self.items)
+    
+    def imprimir(self):
+        """ Metodo que imprime la cola """
+        try:
+            self.items[0]
+            self.items[1]
+            self.items[2]
+            print(f"[ Barbero , Silla 1 - Cliente {self.items[0]} , Silla 2 - Cliente {self.items[1]} , Silla 3 - Cliente {self.items[2]} ]")
+        except IndexError:
+            try:
+                self.items[0]
+                self.items[1]
+                print(f"[ Barbero , Silla 1 - Cliente {self.items[0]} , Silla 2 - Cliente {self.items[1]} , Silla 3 - Vacio ]")
+            except IndexError:
+                try:
+                    self.items[0]
+                    print(f"[ Barbero , Silla 1 - Cliente {self.items[0]} , Silla 2 - Vacio , Silla 3 - Vacio ]")
+                except IndexError:
+                    print("[ Barbero , Silla 1 - Vacio , Silla 2 - Vacio , Silla 3 - Vacio ]")
+
     
