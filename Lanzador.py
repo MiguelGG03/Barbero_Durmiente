@@ -2,6 +2,7 @@ from Barbero import Barbero
 from Cliente import Cliente
 from Cola import Cola
 import os
+import time
 
 def main():
 
@@ -11,13 +12,15 @@ def main():
     i = 0
     j = 0
 
-
+    hora=time.time()
     os.system('cls')
     while opcion == 'S' or opcion == 's':
 
 
         if i % 10 == 0:
             opcion = input("Desea agregar un cliente?\n[S/N]\n>>>  ")
+            hora_desp=time.time()-hora
+            hora=time.time()
             if opcion == 'S' or opcion == 's':
                 j += 1
                 if cola.estaVacia():
@@ -55,7 +58,7 @@ def main():
                 print("---------------------------------------------------------------\n")
                 print(f"| Posiciones ocupadas: {cola.imprimir()} |\n")
             else:
-                cliente_1.setTiempoDeEsperado(cliente_1.getTiempoEsperado() + 1)
+                cliente_1.setTiempoDeEsperado(cliente_1.getTiempoEsperado() + int(round((hora_desp),0)))
         i += 1
 
 if __name__ == "__main__":
