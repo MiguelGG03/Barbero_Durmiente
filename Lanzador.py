@@ -11,8 +11,10 @@ def main():
     i = 0
     j = 0
 
+
+    os.system('cls')
     while opcion == 'S' or opcion == 's':
-        os.system('cls')
+
 
         if i % 10 == 0:
             opcion = input("Desea agregar un cliente?\n[S/N]\n>>>  ")
