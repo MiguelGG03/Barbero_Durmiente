@@ -9,15 +9,11 @@ def main():
     opcion = 'S'
     cola = Cola()
     barbero = Barbero()
-    i = 0
     j = 0
 
     hora=time.time()
     os.system('cls')
     while opcion == 'S' or opcion == 's':
-
-
-        #if i % 10 == 0:
             
         hora_desp=round((time.time()-hora),0)
         hora=round(time.time(),0)
@@ -63,7 +59,8 @@ def main():
                 print(f"| Posiciones ocupadas: {cola.imprimir()} |\n")
             else:
                 cliente_1.setTiempoEsperado(cliente_1.getTiempoEsperado() + hora_desp)
-        #i += 1
+
+
 
 if __name__ == "__main__":
     main()
