@@ -17,31 +17,31 @@ def main():
     while opcion == 'S' or opcion == 's':
 
 
-        if i % 10 == 0:
+        #if i % 10 == 0:
             
-            hora_desp=round((time.time()-hora),0)
-            hora=round(time.time(),0)
+        hora_desp=round((time.time()-hora),0)
+        hora=round(time.time(),0)
 
-            opcion = input("Desea agregar un cliente?\n[S/N]\n>>>  ")
-            
-            if opcion == 'S' or opcion == 's':
-                j += 1
-                if cola.estaVacia():
-                    cola.encolar(Cliente(j,"Con Barbero"))
-                elif cola.count() == 1:
-                    cola.encolar(Cliente(j,"Esperando en Silla 1"))
-                elif cola.count() == 2:
-                    cola.encolar(Cliente(j,"Esperando en Silla 2"))
-                elif cola.count() == 3:
-                    cola.encolar(Cliente(j,"Esperando en Silla 3"))
-                else:
-                    print("No hay sillas disponibles, el cliente se va\n")
-                    j -= 1
+        opcion = input("Desea agregar un cliente?\n[S/N]\n>>>  ")
+        
+        if opcion == 'S' or opcion == 's':
+            j += 1
+            if cola.estaVacia():
+                cola.encolar(Cliente(j,"Con Barbero"))
+            elif cola.count() == 1:
+                cola.encolar(Cliente(j,"Esperando en Silla 1"))
+            elif cola.count() == 2:
+                cola.encolar(Cliente(j,"Esperando en Silla 2"))
+            elif cola.count() == 3:
+                cola.encolar(Cliente(j,"Esperando en Silla 3"))
+            else:
+                print("No hay sillas disponibles, el cliente se va\n")
+                j -= 1
 
 
-            print("| Posiciones totales : [ Barbero , Silla 1 , Silla 2 , Silla 3 ] |\n")
-            print("---------------------------------------------------------------\n")
-            print(f"| Posiciones ocupadas : {cola.imprimir()} |\n")
+        print("| Posiciones totales : [ Barbero , Silla 1 , Silla 2 , Silla 3 ] |\n")
+        print("---------------------------------------------------------------\n")
+        print(f"| Posiciones ocupadas : {cola.imprimir()} |\n")
 
         if not cola.estaVacia():
             cliente_1=cola.first()
@@ -63,7 +63,7 @@ def main():
                 print(f"| Posiciones ocupadas: {cola.imprimir()} |\n")
             else:
                 cliente_1.setTiempoEsperado(cliente_1.getTiempoEsperado() + hora_desp)
-        i += 1
+        #i += 1
 
 if __name__ == "__main__":
     main()
