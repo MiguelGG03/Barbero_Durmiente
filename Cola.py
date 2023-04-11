@@ -54,7 +54,7 @@ class Cola:
                     try:
                         self.items[0].getNumCliente()
 
-                        return(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} - Tiempo de Espera {self.items[0].getTiempoDeEspera()} - Tiempo Esperado {self.items[0].getTiempoEsperado()} , Silla 2 - Vacio , Silla 3 - Vacio ]")
+                        return(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} - Tiempo de Espera {self.items[0].getTiempoDeEspera()} - Tiempo Esperado {self.items[0].getTiempoEsperado()} ,\n Silla 1 - Vacio ,\n Silla 2 - Vacio ,\n Silla 3 - Vacio ]")
                     except IndexError:
                         return("[ Nadie con Barbero , Silla 1 - Vacio , Silla 2 - Vacio , Silla 3 - Vacio ]")
 
