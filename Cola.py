@@ -39,22 +39,22 @@ class Cola:
         try:
             self.items[3].getNumCliente()
 
-            return (f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} - Tiempo de Espera {self.items[0].getTiempoDeEspera()} - Tiempo Esperado {self.items[0].getTiempoEsperado()} ,\n Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} - Tiempo de Espera {self.items[0].getTiempoDeEspera()} - Tiempo Esperado {self.items[0].getTiempoEsperado()},\n Cliente {self.items[2].getNumCliente()} - {self.items[2].getEstado()} ,\n Cliente {self.items[3].getNumCliente()} - {self.items[3].getEstado()} ]")
+            return (f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} - Tiempo de Espera {self.items[0].getTiempoDeEspera()} - Tiempo Esperado {self.items[0].getTiempoEsperado()} ,\n Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} - Tiempo de Espera {self.items[0].getTiempoDeEspera()} - Tiempo Esperado {self.items[0].getTiempoEsperado()},\n Cliente {self.items[2].getNumCliente()} - {self.items[2].getEstado()} - Tiempo de Espera {self.items[2].getTiempoDeEspera()} - Tiempo Esperado {self.items[2].getTiempoEsperado()} ,\n Cliente {self.items[3].getNumCliente()} - {self.items[3].getEstado()} - Tiempo de Espera {self.items[3].getTiempoDeEspera()} - Tiempo Esperado {self.items[3].getTiempoEsperado()} ]")
         except IndexError:
             try:
                 self.items[2].getNumCliente()
 
-                return (f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} ,\n Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} ,\n Cliente {self.items[2].getNumCliente()} - {self.items[2].getEstado()} ,\n Silla 3 - Vacio ]")
+                return (f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} - Tiempo de Espera {self.items[0].getTiempoDeEspera()} - Tiempo Esperado {self.items[0].getTiempoEsperado()} ,\n Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} - Tiempo de Espera {self.items[1].getTiempoDeEspera()} - Tiempo Esperado {self.items[1].getTiempoEsperado()} ,\n Cliente {self.items[2].getNumCliente()} - {self.items[2].getEstado()} - Tiempo de Espera {self.items[2].getTiempoDeEspera()} - Tiempo Esperado {self.items[2].getTiempoEsperado()} ,\n Silla 3 - Vacio ]")
             except IndexError:
                 try:
                     self.items[1].getNumCliente()
 
-                    return(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()},\n Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} ,\n Silla 2 - Vacio ,\n Silla 3 - Vacio ]")
+                    return(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} - Tiempo de Espera {self.items[0].getTiempoDeEspera()} - Tiempo Esperado {self.items[0].getTiempoEsperado()},\n Cliente {self.items[1].getNumCliente()} - {self.items[1].getEstado()} - Tiempo de Espera {self.items[1].getTiempoDeEspera()} - Tiempo Esperado {self.items[1].getTiempoEsperado()} ,\n Silla 2 - Vacio ,\n Silla 3 - Vacio ]")
                 except IndexError:
                     try:
                         self.items[0].getNumCliente()
 
-                        return(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} , Silla 2 - Vacio , Silla 3 - Vacio ]")
+                        return(f"[ Cliente {self.items[0].getNumCliente()} - {self.items[0].getEstado()} - Tiempo de Espera {self.items[0].getTiempoDeEspera()} - Tiempo Esperado {self.items[0].getTiempoEsperado()} , Silla 2 - Vacio , Silla 3 - Vacio ]")
                     except IndexError:
                         return("[ Nadie con Barbero , Silla 1 - Vacio , Silla 2 - Vacio , Silla 3 - Vacio ]")
 
